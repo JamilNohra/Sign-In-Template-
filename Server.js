@@ -62,7 +62,8 @@ app.get('/getUser', function (req, res) {
     console.log(authentication);
     //res.send(authentication)
   })
-  app.listen(3000)
+  app.listen(process.env.PORT || 3000, 
+    () => console.log("Server is running..."));
 
   
    
