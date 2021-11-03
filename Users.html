@@ -15,12 +15,12 @@
     function showMe(){
         fetch('https://warm-brook-27209.herokuapp.com/Users')
   .then(response => response.json())
-  .then(data => {
+  .then(json => {
     var ul = document.getElementById('Users')
-    data.forEach(element => {
-        var li = document.createElement(li);
+    json.forEach(element => {
+        var li = document.createElement('li');
         li.innerHTML = element.email;
-        ul.appendChild('li');
+        ul.appendChild(li);
     });
 
 
