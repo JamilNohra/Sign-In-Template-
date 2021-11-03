@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Page</title>
+</head>
+<body>
+    <h1>The Useres are:</h1>
+    <button onclick="showMe()">Users</button>
+    <ul id="Users"></ul>
+</body>
+<script>
+    function showMe(){
+        fetch('https://warm-brook-27209.herokuapp.com/Users')
+  .then(response => response.json())
+  .then(data => {
+    var ul = document.getElementById('Users')
+    data.forEach(element => {
+        var li = document.createElement('li');
+        li.innerHTML = element.email;
+        ul.appendChild('li');
+    });
+
+
+  });
+    }
+</script>
+</html>
